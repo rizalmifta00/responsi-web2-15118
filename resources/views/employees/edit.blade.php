@@ -1,6 +1,6 @@
-@extends('')
+@extends('base')
 @section('employees','active')
-@section('')
+@section(content')
 <form action="{{route('employees.edit',$employees->id_employees)}}" method="POST">
   @csrf
   @method('PUT')
