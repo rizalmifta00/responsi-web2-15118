@@ -19,10 +19,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item @yield('jobs')">
-                        <a class="nav-link" href="">Jobs</a>
+                        <a class="nav-link" href="{{route('jobs.index')}}">Jobs</a>
                     </li>
                     <li class="nav-item @yield('employees')">
-                        <a class="nav-link" href="">Employees</a>
+                        <a class="nav-link" href="{{route('employees.index')}}">Employees</a>
                     </li>
                     <li class="nav-item @yield('info')">
                         <!-- isikan link INFO anda disini -->

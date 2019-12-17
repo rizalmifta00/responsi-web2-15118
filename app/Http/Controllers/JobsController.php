@@ -14,8 +14,8 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $data = Jobs::all();
-        return view('jobs.index')->with('jobs', $data);
+        $da = Jobs::all();
+        return view('jobs.index')->with('jobs', $da);
     }
 
     /**
@@ -37,16 +37,14 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama'=>'required',
+            'name'=>'required',
         ]);
         $jobs = new Jobs([
-            'nama' => $request->input('nama')
+            'name' => $request->input('name')
         ]);
-        
         $jobs->save();
         return redirect('jobs');
-    }
-
+        }
     /**
      * Display the specified resource.
      *
@@ -66,8 +64,8 @@ class JobsController extends Controller
      */
     public function edit($id)
     {
-        $data = Jobs::where('id_jobs', '=', $id_jobs)->firstOrFail();
-        return view('jobs.edit')->with('', $data);
+        $da = Jobs::where('id_jobs', '=', $id)->firstOrFail();
+        return view('jobs.edit')->with('jobs', $da);
     }
 
     /**
@@ -80,12 +78,12 @@ class JobsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama'=>'required',
+            'name'=>'required',
         ]);
         $data = [
-            'nama' => $request->nama,
+            'name' => $request->name,
         ];
-        Jobs::where('id_jobs',$id_jobs)->update($data);
+        Jobs::where('id_jobs',$id)->update($data);
         return redirect('jobs');
     }
 
@@ -97,7 +95,7 @@ class JobsController extends Controller
      */
     public function destroy($id)
     {
-        Jobs::where('id_jobs',$id_jobs)->delete();
-        return redirect('jobs.index');
+        Jobs::where('id_jobs',$id)->delete();
+        return redirect('jobs');
     }
 }

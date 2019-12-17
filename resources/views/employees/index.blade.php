@@ -26,8 +26,8 @@
             <td>{{$data->address}}</td>
             <td>
                 <div class="btn-group">
-                    <a href="{{route('employees.edit)}}',$data->id_employees)}}" class="btn btn-success">Edit</a>
-                    <form action="{{ route('employees.destroy')}}, $data->id_employees)}}" method="post">
+                    <a href="{{route('employees.edit',$data->id_employees)}}" class="btn btn-success">Edit</a>
+                    <form action="{{ route('employees.destroy', $data->id_employees)}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit">Hapus</button>

@@ -18,7 +18,7 @@
             <td>{{$data->name}}</td>
             <td>
                 <div class="btn-group">
-                    <a href="{{route('jobs.edit')}},$data->id_jobs)}}" class="btn btn-success">Edit</a>
+                    <a href="{{route('jobs.edit',$data->id_jobs)}}" class="btn btn-success">Edit</a>
                     <form action="{{ route('jobs.destroy', $data->id_jobs)}}" method="post">
                         @csrf
                         @method('DELETE')
