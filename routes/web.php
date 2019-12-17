@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::resource('/jobs', 'JobsController');
 Route::resource('/employees', 'EmployeesController');
 
+Route::get('/info', function () {
+    return view('info');
+});
 
 
 Auth::routes();

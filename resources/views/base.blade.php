@@ -26,7 +26,7 @@
                     </li>
                     <li class="nav-item @yield('info')">
                         <!-- isikan link INFO anda disini -->
-                        <a class="nav-link" href="">Info</a>
+                        <a class="nav-link" href="/info">Info</a>
                     </li>
                 </ul>
                 @if (Route::has('login'))
