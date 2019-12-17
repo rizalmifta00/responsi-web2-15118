@@ -2,17 +2,15 @@
 
 use Illuminate\Database\Seeder;
 use App\Jobs;
-use App\Employees;
-class DatabaseSeeder extends Seeder
+class JobsTableSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
         factory(Jobs::class,10)->create();
-        factory(Employees::class,150)->create();
     }
 }

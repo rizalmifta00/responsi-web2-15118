@@ -21,7 +21,7 @@ class CreateEmployeesTable extends Migration
             // $table->('phone'); string
             // $table->('address'); string
             $table->bigIncrements('id_employees');
-            $table->unsignedBigInteger('id_jobs');
+            $table->BigInteger('id_jobs')->unsigned();
             $table->string('name');
             $table->string('email');
             $table->string('phone');
